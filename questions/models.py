@@ -19,10 +19,9 @@ class Answer(models.Model):
 
 
 class Statistics(models.Model):
-    question =  models.ForeignKey('questions.Question', related_name='statistics', on_delete=models.CASCADE)
+    question = models.ForeignKey('questions.Question', related_name='statistics', on_delete=models.CASCADE)
     answered = models.BigIntegerField()
     correctly = models.BigIntegerField()
 
     class Meta:
         verbose_name_plural = 'Statistics'
-
