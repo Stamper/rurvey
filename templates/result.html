@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <h1 class="mt-2">
+        {% if answered == correct %}
+            Correct
+        {% else %}
+            Wrong
+        {% endif %}
+    </h1>
+    <hr class="mt-0 mb-4">
+    <h1 class="display-4">{{ question.title }}</h1>
+    <ul class="list-group">
+        {% for a in question.answers.all %}
+            <li class="list-group-item
+        {% if a.id == correct %}
+        list-group-item-success
+        {%  elif a.id == answered and answered != correct %}
+        list-group-item-danger
+        {% endif %}
+">{{ a.answer }}</li>
+        {% endfor %}
+    </ul>
+    <br>
+    <a class="btn btn-secondary" href="/">Another question</a>
+
+{% endblock %}
