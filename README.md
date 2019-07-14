@@ -1,6 +1,8 @@
 # Random survey web app
 ### Installation
 `$ pip install -r Requirements.txt`
+
+Configure your database connection [here](https://github.com/Stamper/rurvey/blob/master/rurvey/settings.py#L78). You can choice a RDBMS from the [list](https://docs.djangoproject.com/en/2.2/ref/databases/).
 ### Project bootstrap
 ```
 $ python manage.py migrate
